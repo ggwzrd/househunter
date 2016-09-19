@@ -1,0 +1,114 @@
+*{
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+body{
+  font-family: 'Comfortaa', cursive;
+  margin:0;
+  padding: 0;
+  text-align: center;
+  background: url("images/bkg.jpg");
+}
+h1 {
+	font-family: 'Comfortaa', cursive;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+  margin-bottom: 100px;
+}
+h3 {
+	font-family: 'Comfortaa', cursive;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 15.4px;
+}
+p {
+	font-family: 'Comfortaa', cursive;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+div{
+  display: block;
+  margin: auto;
+  overflow: hidden;
+}
+input{
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  font-family: 'Comfortaa', cursive;
+}
+a{
+  text-decoration: none;
+}
+input[type = "checkbox"]{
+  display: none;
+}
+
+.list{
+  border-top: 40px solid grey;
+  text-align: justify;
+  width: 30%;
+  background: white;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+}
+.list .item{
+  vertical-align: text-top;
+  padding: 15px;
+  border-bottom: 1px solid #CCC;
+}
+.list .item.editing-item .actions{
+  margin-top: 17px;
+}
+.list .item.edited label:after{
+  content: "edited";
+  text-transform: uppercase;
+  text-align: center;
+  padding-left: 5px;
+  font-size: 12px;
+  color: #CCC;
+
+}
+.list .item.completed label{
+  color: #CCC;
+  text-decoration: line-through;
+}
+.list .item span{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("images/unchecked.png");
+  background-size: contain;
+  margin: 0 auto;
+}
+.list .item.completed span{
+  background: url("images/checked.png");
+  background-size: contain;
+}
+.list .actions{
+  float: right;
+}
+.list .editing-lable{
+  padding:20px;
+  font-size: 16px;
+  width: 65%;
+}
+.list .save{
+  color: blue;
+}
+.list .delete{
+  color: red;
+}
+
+.list .add{
+  padding: 15px;
+}
+.list .add a{
+  color: #CCC
+}
