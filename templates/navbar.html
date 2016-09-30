@@ -1,0 +1,7 @@
+  <ul>
+    <div ng-repeat="e in ['home', 'offers', 'requests']"  ng-init="selected = false">
+      <a href="" ng-blur="selected=false" ng-click="selected = true; moveTo(e,$event)">
+        <li id="{{e}}" ng-class="{'selected': selected}">{{e | uppercase}}</li>
+      </a>
+    </div>
+  </ul>
