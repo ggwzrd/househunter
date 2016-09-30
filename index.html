@@ -2,26 +2,36 @@
 <html>
 <head>
   <title>House Hunter</title>
-  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link href="styles/main.css" rel="stylesheet" type="text/css" >
-</head>
-<body ng-app="houseHunterApp">
-
-  <script src="vendor/fb-api-main.js" type="text/javascript"></script>
-  <script src="vendor/fb-login.js" type="text/javascript"></script>
-  <div ng-controller="mainCtrl">
-
-    <h1>Room List</h1>
-    <fblikebtn></fblikebtn>
-    <fbloginbtn></fbloginbtn>
-    <div id="status">
-    </div>
-    <div
-  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="vendor/jquery.waypoints.min.js" type="text/javascript"></script>
   <script src="scripts/app.js" type="text/javascript"></script>
   <script src="scripts/controllers/main.js" type="text/javascript"></script>
+  <script src="scripts/controllers/feed.js" type="text/javascript"></script>
+  <script src="scripts/controllers/nav.js" type="text/javascript"></script>
+  <script src="scripts/services/fb.js" type="text/javascript"></script>
+  <script src="scripts/services/groups.js" type="text/javascript"></script>
   <script src="scripts/directives/fb/like-btn.js" type="text/javascript"></script>
   <script src="scripts/directives/fb/login-btn.js" type="text/javascript"></script>
+  <script src="scripts/directives/offers.js" type="text/javascript"></script>
+  <script src="scripts/directives/requests.js" type="text/javascript"></script>
+  <script src="scripts/directives/welcome.js" type="text/javascript"></script>
+  <script src="scripts/directives/navbar.js" type="text/javascript"></script>
+</head>
+<body ng-app="houseHunterApp" ng-controller="mainCtrl">
+  <div id="fb-root"></div>
+  <div class="col-12 navbar" ng-controller="navCtrl">
+    <navbar></navbar>
+    <fbloginbtn ng-class="{'logged': user.login}"></fbloginbtn>
+  </div>
+  <welcome></welcome>
+  <div class="col-12 wrapper feed" id="feed" ng-controller="feedCtrl">
+    <offers></offers>
+    <requests></requests>
+    <input type = "button" class="load" ng-click="loadMorePosts()" value="Load more">
+  </div>
 </body>
 </html>

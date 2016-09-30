@@ -1,0 +1,16 @@
+<div class="col-8 offers" >
+  <h1> Offers </h1>
+  <h3> In this section you will find all the people <br>
+    that are renting an appartment/room</h3>
+  <div class="col-11 post offer" ng-repeat="offer in offers">
+    <div class="fb-post"
+      		data-href="https://www.facebook.com/{{offer.group_id}}/posts/{{offer.post_id}}/"
+        	data-width="500">
+    </div>
+    <div class = "col-3 stats">
+      {{"Offer ID: "+$index}}<br>
+      {{"Rating: "+offer.rating+"/"+offer.maxRating}}<br>
+      {{"Suspect words: "+offer.words}}
+    </div>
+  </div>
+</div>
