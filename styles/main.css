@@ -240,6 +240,7 @@ ul{
   height: 100%;
   overflow: scroll;
   text-align: center;
+  padding-bottom: 50px;
 }
 
 .requests h1, .offers h1 {
@@ -282,7 +283,28 @@ ul{
   background: #4080FF;
   border: 1px solid #0A60C5;
   box-shadow: inset 0px -1px 2px 0px rgba(0,0,0,0.50);
-  margin-bottom: 200px;
+  margin-bottom: 20px;
+  text-align: center;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.feed .load p{
+  width: 100px;
+  height: 30px;
+  display: block;
+  margin: 12px auto;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.feed .load:hover span{
+  width: 39px;
+  height: 36px;
+  background:url("images/loading.gif");
+  background-size: contain;
+  display: block;
+  margin: 5px auto;
 }
 
 .right-btn-container{
@@ -317,22 +339,44 @@ ul{
   right: 65px;
   background: url("images/feedback-container.png") no-repeat;
   background-size: contain;
-  display: none;
   overflow: hidden;
-  transition: 0.5s;
+  display: none;
+  transition: 0.2s;
 }
 
+.right-btn-container .feedback .controllers{
+  width: 200px;
+  height: auto;
+  position: fixed;
+  display: block;
+  color: #CCC;
+  margin-top: 190px;
+  margin-left: 130px;
+}
+
+.right-btn-container .feedback .controllers div{
+  width: auto;
+  height: auto;
+  display: inline-block;
+  color: #CCC;
+  cursor: pointer;
+}
 .right-btn-container .feedback.show{
   display: inline-block;
+}
+
+.right-btn-container .feedback .controllers .save{
+  color: #4A90E2;
 }
 
 .right-btn-container .feedback .close{
   width: 30px;
   height: 30px;
   text-align: center;
-  top: 10px;
-  right: 55px;
-  position: absolute;
+  margin-top: 10px;
+  margin-left: 340px;
+  position: fixed;
+  float: right;
   cursor: pointer;
   border: 1px solid #e0e0e0;
   border-radius: 18px;
@@ -358,7 +402,28 @@ ul{
   overflow: hidden;
 }
 
-.right-btn-container .feedback .title{
+.right-btn-container .feedback .question textarea{
+  height: 100px;
+  width: 300px;
+  resize: none;
+  display: block;
+  margin: 0 40px;
+  font-size: 18px;
+  color: #474747;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+}
+.right-btn-container .feedback .question.visible{
+  visibility: visible;
+}
+
+.right-btn-container .feedback .question .title{
+  height: 50px;
+  color: #4A90E2;
+  font-size: 24px;
+}
+
+.right-btn-container .feedback #one.question .title{
   height: 50px;
   color: #4A90E2;
   font-size: 24px;
@@ -366,10 +431,16 @@ ul{
   margin-top: 50px;
 }
 
+.right-btn-container .feedback #two.question .title{
+  margin-left: 100px;
+  margin-top: 30px;
+}
+
 .right-btn-container .feedback .ratings{
   height: 35px;
-  margin: 25px 85px;
+  margin: 5px 85px;
 }
+
 .right-btn-container .feedback .ratings .rating{
   height: 35px;
   width: 35px;
@@ -436,7 +507,7 @@ ul{
     .feed .post{
       padding: 0;
     }
-    .footer{
+    .feedback-btn{
       visibility: hidden;
     }
 

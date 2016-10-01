@@ -2,7 +2,12 @@
     <input type="button" class ="feedback-btn" ng-click = "showFeedback = !showFeedback">
     <div class = "feedback" ng-class = "{'show': showFeedback}">
         <div class="close" ng-click = "showFeedback = false"><h3>X</h3></div>
-        <div id="1" class ="col-12 question">
+        <div class="col-2 controllers">
+          <div class = "prev" ng-click = "prev()"><p>	&#60; Prev</p></div>
+          <div class = "save" ng-click = "save()"><p>Send</p></div>
+          <div class = "next" ng-click = "next()"><p>Next &#62;</p></div>
+        </div>
+        <div id="one" class ="col-12 question visible">
           <div class = "col-12 title">Was this helpful to you?</div>
           <div class="col-6 ratings">
             <div class="rating" ng-repeat="star in [{id:1, label: 'Not at all'},{id:2, label: ''},{id:3, label: 'Almost'},{id:4, label: ''},{id:5, label: 'Yeeees!'}]" ng-class="{'checked': checked}" ng-init="checked = false" >
@@ -11,6 +16,10 @@
               <p>{{star.label}}</p>
             </div>
           </div>
+        </div>
+        <div id="two" class ="col-12 question">
+          <div class = "col-12 title">Suggestions:</div>
+            <textarea maxlength="120" placeholder="< Add Text Here >" draggable="false"></textarea>
         </div>
     </div>
 </div>

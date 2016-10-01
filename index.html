@@ -11,6 +11,7 @@
   <script src="scripts/controllers/main.js" type="text/javascript"></script>
   <script src="scripts/controllers/feed.js" type="text/javascript"></script>
   <script src="scripts/controllers/nav.js" type="text/javascript"></script>
+  <script src="scripts/controllers/feedback.js" type="text/javascript"></script>
   <script src="scripts/services/fb.js" type="text/javascript"></script>
   <script src="scripts/services/groups.js" type="text/javascript"></script>
   <script src="scripts/directives/fb/like-btn.js" type="text/javascript"></script>
@@ -27,12 +28,17 @@
     <navbar></navbar>
     <fbloginbtn ng-class="{'logged': user.login}"></fbloginbtn>
   </div>
-  <feedbackbtn></feedbackbtn>
+  <div ng-controller="feedbackCtrl">
+    <feedbackbtn></feedbackbtn>
+  </div>
   <welcome></welcome>
   <div class="col-12 wrapper feed" id="feed" ng-controller="feedCtrl">
     <offers></offers>
     <requests></requests>
-    <input type = "button" class="load" ng-click="loadMorePosts()" value="Load more">
+    <div class="load" ng-click="loadMorePosts()">
+      <p>Load More</p>
+      <span></span>
+    </div>
   </div>
 </body>
 </html>
