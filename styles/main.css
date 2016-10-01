@@ -282,6 +282,126 @@ ul{
   background: #4080FF;
   border: 1px solid #0A60C5;
   box-shadow: inset 0px -1px 2px 0px rgba(0,0,0,0.50);
+  margin-bottom: 200px;
+}
+
+.right-btn-container{
+  width: 65px;
+  height: 230px;
+  right: 0;
+  top:30%;
+  position: fixed;
+  overflow: visible;
+  z-index: 50;
+  margin: 0;
+  padding: 0;
+}
+
+.right-btn-container .feedback-btn{
+  height: 230px;
+  width: 60px;
+  position: absolute;
+  right: 0;
+  background: url("images/feedback-btn.png") no-repeat;
+  border: 0;
+  transition: 0.2s;
+}
+
+.right-btn-container .feedback-btn:hover{
+  background: url("images/feedback-btn-hover.png") no-repeat;
+}
+.right-btn-container .feedback{
+  width: 427px;
+  height: 239px;
+  position: absolute;
+  right: 65px;
+  background: url("images/feedback-container.png") no-repeat;
+  background-size: contain;
+  display: none;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.right-btn-container .feedback.show{
+  display: inline-block;
+}
+
+.right-btn-container .feedback .close{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  top: 10px;
+  right: 55px;
+  position: absolute;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  border-radius: 18px;
+  transition: 0.2s;
+}
+.right-btn-container .feedback .close h3{
+  color: #858585;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 7px auto;
+  transition: 0.2s;
+}
+.right-btn-container .feedback .close:hover{
+  background-color: #8C0808;
+  border: 1px solid #4D0404;
+}
+.right-btn-container .feedback .close h3:hover{
+  color: white;
+}
+
+.right-btn-container .feedback .question{
+  height: 100%;
+  overflow: hidden;
+}
+
+.right-btn-container .feedback .title{
+  height: 50px;
+  color: #4A90E2;
+  font-size: 24px;
+  margin-left: 60px;
+  margin-top: 50px;
+}
+
+.right-btn-container .feedback .ratings{
+  height: 35px;
+  margin: 25px 85px;
+}
+.right-btn-container .feedback .ratings .rating{
+  height: 35px;
+  width: 35px;
+  margin-left: 5px;
+  display: inline-block;
+}
+.right-btn-container .feedback .ratings .rating .star{
+  height: 35px;
+  width: 35px;
+  background: url("images/empty-star.png") no-repeat;
+  display: inline-block;
+  background-size: contain;
+  transition: 0.2s;
+}
+.right-btn-container .feedback .ratings .rating .star:hover{
+  background: url("images/full-star.png") no-repeat;
+}
+.right-btn-container .feedback .ratings .rating.checked .star{
+  background: url("images/full-star.png") no-repeat;
+}
+
+.right-btn-container .feedback .ratings .rating p{
+  color: #C9C9CA;
+  font-size: 12px;
+  position: absolute;
+}
+.footer{
+  height: 200px;
+  z-index: 100;
+  display: block;
+  margin: 0;
+  padding: 5px;
 }
 @media only screen and (max-width: 780px) {
     /* For mobile phones: */
@@ -316,6 +436,8 @@ ul{
     .feed .post{
       padding: 0;
     }
-
+    .footer{
+      visibility: hidden;
+    }
 
 }

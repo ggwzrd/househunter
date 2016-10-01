@@ -1,0 +1,16 @@
+<div class = "right-btn-container" ng-class = "{'show': showFeedback}">
+    <input type="button" class ="feedback-btn" ng-click = "showFeedback = !showFeedback">
+    <div class = "feedback" ng-class = "{'show': showFeedback}">
+        <div class="close" ng-click = "showFeedback = false"><h3>X</h3></div>
+        <div id="1" class ="col-12 question">
+          <div class = "col-12 title">Was this helpful to you?</div>
+          <div class="col-6 ratings">
+            <div class="rating" ng-repeat="star in [{id:1, label: 'Not at all'},{id:2, label: ''},{id:3, label: 'Almost'},{id:4, label: ''},{id:5, label: 'Yeeees!'}]" ng-class="{'checked': checked}" ng-init="checked = false" >
+              <input type="checkbox" ng-model="checked" >
+              <span ng-click = "checked = !checked" class="star" name = "{{star.id}}"></span>
+              <p>{{star.label}}</p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
