@@ -10,9 +10,9 @@
         <div id="one" class ="col-12 question visible">
           <div class = "col-12 title">Was this helpful to you?</div>
           <div class="col-6 ratings">
-            <div class="rating" ng-repeat="star in [{id:1, label: 'Not at all'},{id:2, label: ''},{id:3, label: 'Almost'},{id:4, label: ''},{id:5, label: 'Yeeees!'}]" ng-class="{'checked': checked}" ng-init="checked = false" >
-              <input type="checkbox" ng-model="checked" >
-              <span ng-click = "checked = !checked" class="star" name = "{{star.id}}"></span>
+            <div class="rating" ng-repeat="star in stars" ng-class="{'checked': star.checked}" ng-init="star.checked = false" >
+              <input type="checkbox" ng-model="star.checked" value="{{star.id}}">
+              <span ng-click = "star.checked = !star.checked; onRating($index)" class="star" name = "{{star.id}}"></span>
               <p>{{star.label}}</p>
             </div>
           </div>

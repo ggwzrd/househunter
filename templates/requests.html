@@ -2,7 +2,7 @@
   <h1> Requests </h1>
   <h3> In this section you will find all the people <br>
     that are in need of an apartment/room</h3>
-  <div class="col-11 request post" ng-repeat="request in requests">
+  <div class="col-11 request post" ng-repeat="request in requests | orderBy: request.updated_time">
     <div class="fb-post"
       		data-href="https://www.facebook.com/{{request.group_id}}/posts/{{request.post_id}}/"
         	data-width="500">
